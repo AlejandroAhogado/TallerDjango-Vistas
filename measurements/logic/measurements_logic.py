@@ -32,7 +32,8 @@ def create_measurement(var):
 
 
 def delete_measurement(var_pk):
-    measurement = Measurement.objects.get(pk=var_pk)
+    #Measurement.objects.filter(pk=var_pk).delete()
+    measurement = get_measurement(var_pk)
+    #measurement = Measurement.objects.get(pk=var_pk)
     measurement.delete()
-
-    return HttpResponse("Se borro")
+    return HttpResponse()
